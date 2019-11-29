@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MVC_Project.Models.tblEmployeeStatu>
+
+@{
+    ViewBag.Title = "IndexStatus";
+}
+
+<h2>IndexStatus</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StatusName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shift)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Shift)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StatusId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StatusId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StatusId })
+        </td>
+    </tr>
+}
+
+</table>
